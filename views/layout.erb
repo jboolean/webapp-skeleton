@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+
+  <!-- External includes -->
+  <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+  <script src="http://yui.yahooapis.com/3.17.2/build/yui/yui-min.js"></script>
+  <!-- Begin rollup -->
+  <% settings.scriptsManifest.each do |filename| %>
+  <script src="/scripts/<%= filename %>.js"></script>
+  <% end %>
+  <% settings.stylesManifest.each do |filename| %>
+  <link rel="stylesheet" href="/styles/<%= filename %>.css">
+  <% end %>
+  <!-- End rollup -->
+
+</head>
+<body>
+  <!-- begin content -->
+  <%= yield %>
+  <!-- end content -->
+</body>
+</html>
