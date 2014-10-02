@@ -1,6 +1,6 @@
 require 'sinatra'
 
-class BFAMFAPhD < Sinatra::Application
+class MyApp < Sinatra::Application
 
   get '/hello' do
     'Hello world!'

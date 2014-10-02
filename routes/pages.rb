@@ -1,6 +1,6 @@
 # encoding: utf-8
 
-class BFAMFAPhD < Sinatra::Application
+class MyApp < Sinatra::Application
 
   get '/*' do |page|
     puts page

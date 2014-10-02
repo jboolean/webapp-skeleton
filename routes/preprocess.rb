@@ -1,7 +1,7 @@
 # encoding: utf-8
 require 'less'
 
-class BFAMFAPhD < Sinatra::Application
+class MyApp < Sinatra::Application
   get '/styles/*.css' do |filename|
     if !File.exist?(File.join(settings.stylesDir, filename+'.less'))
       halt 404

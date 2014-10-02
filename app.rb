@@ -4,9 +4,9 @@ require 'erb'
 require 'pg'
 require 'pp'
 
-class BFAMFAPhD < Sinatra::Application
+class MyApp < Sinatra::Application
 
-  # set :database, ENV['DATABASE_URL'] || 'postgres://localhost/bfamfaphd'
+  # set :database, ENV['DATABASE_URL'] || 'postgres://localhost/MyApp'
 
   configure do
     set :stylesDir, File.join(settings.root, 'styles')
@@ -27,7 +27,7 @@ class BFAMFAPhD < Sinatra::Application
   end
 
   configure :development do
-    # set :db, PG::Connection.new({:host => 'localhost', :port => 5432, :user => (`whoami`).strip, :dbname => 'bfamfaphd'})
+    # set :db, PG::Connection.new({:host => 'localhost', :port => 5432, :user => (`whoami`).strip, :dbname => 'MyApp'})
 
     scriptsManifest = IO.readlines('scripts.manifest')
     scriptsManifest.map! {|s| s.chomp!}
