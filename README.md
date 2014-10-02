@@ -27,7 +27,3 @@ To run in production run `ruby create-rollups.rb --build` to generate compressed
 
 From the repo root
 `cd .git/hooks && ln -s -f ../../hooks/pre-commit pre-commit && cd ../../`
-
-### Deploying to production
-To run in production run `ruby create-rollups.rb --build` to generate compressed production files. Your produciton server must have RACK_ENV = production.
-I *highly* recommend creating a pre-commit hook for this, and you'll never have to live in fear of deploying inconsistent code again. There is already a pre-commit script here called `pre-commit`, you'll need to symlink to it.
