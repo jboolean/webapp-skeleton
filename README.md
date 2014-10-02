@@ -22,6 +22,12 @@ Again, please don't edit the HTML to include stylesheets, this in done by the de
 
 Yes, there is room for improvement to this basic dependency manager I hacked together. In a future update it will parse out required modules in YUI requires statements, removing the need for dependencies.rb.
 
+# Building production files
+To run in production run `ruby create-rollups.rb --build` to generate compressed production files. It is *highly* recommended to setup this pre-commit hook which is easy. 
+
+From the repo root
+`cd .git/hooks && ln -s -f ../../hooks/pre-commit pre-commit && cd ../../`
+
 ### Deploying to production
 To run in production run `ruby create-rollups.rb --build` to generate compressed production files. Your produciton server must have RACK_ENV = production.
-I *highly* recommend creating a pre-commit hook for this, and you'll never have to live in fear of deploying inconsistent code again.
+I *highly* recommend creating a pre-commit hook for this, and you'll never have to live in fear of deploying inconsistent code again. There is already a pre-commit script here called `pre-commit`, you'll need to symlink to it.
