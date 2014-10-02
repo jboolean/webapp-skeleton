@@ -2,17 +2,40 @@
 <html>
 <head>
 
-  <!-- External includes -->
-  <script type="text/javascript" src="https://www.google.com/jsapi"></script>
-  <script src="http://yui.yahooapis.com/3.17.2/build/yui/yui-min.js"></script>
-  <!-- Begin rollup -->
-  <% settings.scriptsManifest.each do |filename| %>
+  <!-- <%= settings.environment %> -->
+
+   <% if (settings.environment == :development) %>
+  <link rel="stylesheet" href="/styles/manifest.css">
+  <% else %>
+  <link rel="stylesheet" href="/build/manifest.css">
+  <% end %>
+
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+  
+  <script src="http://yui.yahooapis.com/3.17.2/build/yui/yui.js"></script>
+  
+  <% if (settings.environment == :development)
+  settings.scriptsManifest.each do |filename| %>
   <script src="/scripts/<%= filename %>.js"></script>
+  <% end else %>
+  <script src="/build/rollup.js"></script>
   <% end %>
-  <% settings.stylesManifest.each do |filename| %>
-  <link rel="stylesheet" href="/styles/<%= filename %>.css">
-  <% end %>
-  <!-- End rollup -->
+  
+  <title>BFAMFAPhD Census Report</title>
+
+  <meta name="viewport" content="width=device-width">
+  <meta name="viewport" content="initial-scale=1.0 maximum-scale=1.0, user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <meta property="og:title" content="Explore Data About Artists in NYC: BFAMFAPhD Census Report" />
+
+  <meta property="og:site_name" content="BFAMFAPhD Census Report" />
+  <meta property="og:description" content="Explore data about artists in New York City
+  including poverty rates, rent burden, and where art students go after school." />
+  <meta property="og:image" content="/images/poster.jpg" />
+
+
 
 </head>
 <body>
