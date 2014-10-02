@@ -29,7 +29,7 @@ class MyApp < Sinatra::Application
   configure :development do
     # set :db, PG::Connection.new({:host => 'localhost', :port => 5432, :user => (`whoami`).strip, :dbname => 'MyApp'})
 
-    scriptsManifest = IO.readlines('scripts.manifest')
+    scriptsManifest = IO.readlines('scripts/scripts.manifest')
     scriptsManifest.map! {|s| s.chomp!}
     set :scriptsManifest, scriptsManifest
   end

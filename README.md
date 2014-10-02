@@ -26,4 +26,4 @@ Yes, there is room for improvement to this basic dependency manager I hacked tog
 To run in production run `ruby create-rollups.rb --build` to generate compressed production files. It is *highly* recommended to setup this pre-commit hook which is easy. 
 
 From the repo root
-`cd .git/hooks && ln -s -f ../../hooks/pre-commit pre-commit && cd ../../`
+`cd .git/hooks && ln -s -f ../../build\ scripts/hooks/pre-commit pre-commit && cd ../../`
