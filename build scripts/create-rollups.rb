@@ -1,6 +1,6 @@
 require 'optparse'
 
-require_relative 'dependencies'
+require_relative '../dependencies'
 require_relative 'preprocessor'
 
 
@@ -74,7 +74,7 @@ File.open("styles/manifest.less", "w") do |f|
     "/*BEGIN FILE #{filename}*/\n@import \"#{filename}\";"
   end)
 end
-File.open("scripts.manifest", "w") do |f|
+File.open("scripts/scripts.manifest", "w") do |f|
   f.puts($jsManifest)
 end
 

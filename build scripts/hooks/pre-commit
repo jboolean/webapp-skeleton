@@ -1,5 +1,5 @@
 #!/bin/sh
 # symlink to this file from ./.get/hooks/pre-commit
 
-ruby create-rollups.rb --build
+ruby build\ scripts/create-rollups.rb --build
 git add build/manifest.css build/rollup.js
