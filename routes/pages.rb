@@ -3,7 +3,10 @@
 class MyApp < Sinatra::Application
 
   get '/*' do |page|
-    puts page
-    erb page.to_sym
+    path = File.join(settings.views, page+'.erb')
+    pass unless File.exist?(path)
+
+    @page = page.to_sym
+    erb @page
   end
 end

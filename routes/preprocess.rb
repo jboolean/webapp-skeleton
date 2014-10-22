@@ -4,9 +4,13 @@ require 'less'
 class MyApp < Sinatra::Application
   get '/styles/*.css' do |filename|
     if !File.exist?(File.join(settings.stylesDir, filename+'.less'))
-      halt 404
+      halt 404, {'Content-Type' => 'text/css'}, '/* File not found */'
     end
-    less filename.to_sym, :views => settings.stylesDir
+    begin
+      less filename.to_sym, :views => settings.stylesDir
+    rescue Less::Error => e
+      halt 500, {'Content-Type' => 'text/css'}, "/* LESS ERROR: #{e.cause} */"
+    end
   end
 
   get '/scripts/*.js' do |filename|

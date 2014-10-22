@@ -9,7 +9,7 @@ If I want to start a simple webapp, here's a good place to start. A basic Sinatr
 `bundle install`
 
 ### To run in devlopment
-`bundle exec rerun --pattern "**/*.{rb,erb,ru}" 'thin -R config.ru start'`
+`bundle exec rerun --pattern "**/*.{rb,erb,ru}" 'unicorn -c ./config/unicorn.rb'`
 
 ### When you add a new javascript file or change their dependencies
 Open the `dependencies.rb` file and edit it.
@@ -25,5 +25,5 @@ Yes, there is room for improvement to this basic dependency manager I hacked tog
 # Building production files
 To run in production run `ruby create-rollups.rb --build` to generate compressed production files. It is *highly* recommended to setup this pre-commit hook which is easy. 
 
-From the repo root
+To do so, from the repo root
 `cd .git/hooks && ln -s -f ../../build\ scripts/hooks/pre-commit pre-commit && cd ../../`

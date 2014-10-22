@@ -1,7 +1,7 @@
 # encoding: utf-8
 require 'sinatra'
 require 'erb'
-require 'pg'
+# require 'pg'
 require 'pp'
 
 class MyApp < Sinatra::Application
