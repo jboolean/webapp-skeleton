@@ -1,21 +1,22 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    celluloid (0.15.2)
-      timers (~> 1.1.0)
+    celluloid (0.16.0)
+      timers (~> 4.0.0)
     commonjs (0.2.7)
     daemons (1.1.9)
     eventmachine (1.0.3)
-    ffi (1.9.3)
+    execjs (2.2.2)
+    ffi (1.9.6)
+    hitimes (1.2.2)
     json (1.8.1)
     less (2.6.0)
       commonjs (~> 0.2.7)
-    libv8 (3.16.14.3)
-    listen (2.7.7)
+    libv8 (3.16.14.7)
+    listen (2.7.11)
       celluloid (>= 0.15.2)
       rb-fsevent (>= 0.9.3)
       rb-inotify (>= 0.9)
-    pg (0.17.1)
     rack (1.5.2)
     rack-protection (1.5.3)
       rack
@@ -32,12 +33,16 @@ GEM
     therubyracer (0.12.1)
       libv8 (~> 3.16.14.0)
       ref
-    thin (1.5.1)
-      daemons (>= 1.0.9)
-      eventmachine (>= 0.12.6)
-      rack (>= 1.0.0)
+    thin (1.6.3)
+      daemons (~> 1.0, >= 1.0.9)
+      eventmachine (~> 1.0)
+      rack (~> 1.0)
     tilt (1.4.1)
-    timers (1.1.0)
+    timers (4.0.1)
+      hitimes
+    uglifier (2.5.3)
+      execjs (>= 0.3.0)
+      json (>= 1.8.0)
 
 PLATFORMS
   ruby
@@ -45,8 +50,8 @@ PLATFORMS
 DEPENDENCIES
   json
   less
-  pg
   rerun
   sinatra
   therubyracer
   thin
+  uglifier
